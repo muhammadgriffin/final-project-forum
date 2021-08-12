@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/head'); %> 
+    <% if(connectionString != 'undefined'){%>
+    <h1 style="color: cornflowerblue; border: 1px solid crimson;"><%= connectionString%></h1>
+    <% }%>
+    <div class="forum-tables-container">
+
+        <div class="thematiques-container" style="margin-right: 2px;">
+            <h1>Tout les thématiques</h1>
+            <div class="row-container"style="color:royalblue; border: 2px dashed crimson;">
+                <div class="title" >
+                    <h2 class="titreDeThematique" style="color: royalblue;">
+                        Module
+                    </h2>
+                </div>
+                <div class="nombreDeQuestions">
+                   Nombre de questions
+                </div>
+                
+            </div>
+            <% Modules.forEach( module =>{ %> 
+            <div class="row-container">
+                <div class="title">
+                    <a href="questions/<%= module.id_module  %>">
+                        <h2 class="titreDeThematique">
+                            <%= module.nom_module %>
+                        </h2>
+                    </a>
+                </div>
+                <div class="nombreDeQuestions">
+                    
+                </div>
+                
+            </div>
+            <% }) %> 
+        </div>
+        <div class="discussions-container" style="margin-left: 2px;">
+            
+            <h1>Discussions</h1>
+            <div class="row-container"style="color:royalblue; border: 2px dashed crimson;">
+                
+                <div class="title" >
+                    <h2 >
+                        Titre de Discussion
+                    </h2>
+                    
+                </div>
+                <div class="date">Date de création</div>
+                <div class="auteur">Auteur</div>
+                <div class="vues">Vues</div>
+                
+            </div>
+            <% Discussions.forEach( discussion =>{ %> 
+            <div class="row-container">
+                
+                <div class="title">
+                    <h2>
+                        <a href="#"><%= discussion.titre  %> </a>
+                    </h2>
+                    
+                </div>
+                <div class="date"><%= discussion.date_creation.toDateString()%></div>
+                <div class="auteur">????</div>
+                <div class="vues"></div>
+                
+            </div>
+            <% }) %> 
+        </div>
+        
+    </div>
+</body>
+</html>

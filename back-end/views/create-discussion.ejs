@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/head'); %> 
+    <form action="/create-discussion" method="POST">
+        <label for="titre">Titre de discussion:</label>
+        <input type="text"  name="titre" style="display: block; width: 25%; margin: 5px;" required>
+        <label for="description">Description de discussion:</label>
+        <textarea name="description" id="" cols="50" rows="5" style="display: block;" required></textarea>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

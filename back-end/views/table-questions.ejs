@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/head'); %> 
+    <a href="/question/<%= thematique.idThematique%>/create" style=" text-decoration: None; color:blueviolet;">
+        Poser une question!
+    </a>
+    <h3 style="color: green;"></h3>
+    <div class="questions-container">
+        <h1>Questions sur: <%= thematique.titreDeThematique %></h1>
+        <div class="row-container"style="color:royalblue; border: 2px dashed crimson;">
+                
+            <div class="title" >
+                <h2 >
+                    Question
+                </h2>
+                
+            </div>
+            <div class="date">Date de création</div>
+            <div class="auteur">Auteur</div>
+            <div class="vues">Vues</div>
+            
+        </div>
+        <% thematique.questions.forEach(question=>{%>
+        <div class="row-container">
+            <div class="title">
+                <a href="#">
+                    <h2 class="titreDeQuestion">
+                        <%= question.titreDeQuestion %> 
+                    </h2>
+                </a>
+                <h4 class="descriptionDeQuestion">
+                    <%= question.descriptionQuestion %>
+                </h4>
+            </div>
+            <div class="date"><%= question.date  %></div>
+            <div class="auteur">????</div>
+            <div class="vues"></div>
+            
+        </div>
+        <% })%>
+    </div>
+</body>
+</html>

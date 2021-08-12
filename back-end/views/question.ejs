@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./partials/head'); %> 
+    <h1>MODULE: <h1 style="color: crimson;"><%= question.nom_module%></h1></h1>
+    <li>
+        <%= question.titre %> 
+        <p> <%= question.description %> </p>
+        <p> Auteur: <%= question.nom %>  <%= question.prenom %>  </p>
+    </li>
+    <% reponse.forEach( r => { %> 
+    <li>
+        <%= reponse.description %>
+        <p> Auteur: <%= reponse.nom %>  <%= reponse.prenom %>  </p>
+    </li>
+    <% }) %> 
+    <form action="">
+        <textarea name="" id="" cols="30" rows="3">
+        </textarea>
+        <button style="display: block;">Ajouter réponse</button>
+    </form>
+</body>
+</html>
